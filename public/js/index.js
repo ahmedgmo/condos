@@ -1,30 +1,34 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
+var $userFirstName = $("#firstName");
+var $userLastName = $("#lastName");
+var $userEmail = $("#email");
+var $userCellNum = $("#cellNum");
+var $userUnitNum = $("#unitNum");
+var $userPassword = $("#password");
+var $submitBtn = $("#newUser");
 var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveUser: function(user) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/users",
+      data: JSON.stringify(user)
     });
   },
-  getExamples: function() {
+  getUser: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/users",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteUser: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/users/" + id,
       type: "DELETE"
     });
   }
@@ -64,22 +68,26 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var newUser = {
+    first_name: $userFirstName.val().trim(),
+    last_name: $userLastName.val().trim(),
+    email: $userEmail.val().trim(),
+    cellphone: phoneFormatter.format($userCellNum,"(NNN), NNN-NNNN"),
+    unit_num: $userUnitNum.val().trim(),
+    password: $userPassword
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!(newUser.first_name && newUser.last_name && newUser.email && newUser.cellphone && newUser.unit_num && newUser.password)) {
+    alert("You must fill all fields");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.saveUser(newUser).then(function() {
+    console.log("User saved successfully");
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $userFirstName.val("");
+  $userLastName.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked

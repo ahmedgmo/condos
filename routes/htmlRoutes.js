@@ -1,23 +1,29 @@
-var db = require("../models");
+var path = require("path");
 
 module.exports = function(app) {
-  // Load index page
+  // index route loads index.html
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
+  // admin route loads cms.html
+  app.get("/admin", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/adminlogin.html"));
+  });
+
+  // register route loads register.html
+  app.get("/register", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/register.html"));
+  });
+
+  // dashboard route loads dashboard.html
+  app.get("/dashbaord", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/dashboard.html"));
+  });
+
+  // bookings route loads booking.html
+  app.get("/booking", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/booking.html"));
   });
 
   // Render 404 page for any unmatched routes

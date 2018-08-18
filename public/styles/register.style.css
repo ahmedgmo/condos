@@ -1,0 +1,135 @@
+.list-group-item {
+    line-height: 2.5;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('../images/web_bg.gif');
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+  }
+  
+  div#wrapper {
+    width: 60vw;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  img#logo {
+    align-self: center;
+  }
+  
+  #carouselwrappe {
+    height: 1rem!important;
+  }
+  
+  .main-section {
+    margin: 0 auto;
+    margin-top: 130px;
+    padding: 0;
+  }
+  
+  .modal-content {
+    box-shadow: 3px  #848484;
+    opacity: .95;
+    padding: 0 18px;
+    background-color: whitesmoke;
+  }
+  
+  .user-image {
+    margin-top: -70px;
+    margin-bottom: 35px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group input {
+    height: 42px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 18px;
+    padding-left: 54px;
+  }
+  
+  .form-group::before {
+    font-family: 'Font Awesome\ 5 Free';
+    content: "\f304";
+    position: absolute;
+    font-size: 22px;
+    color: #848484;
+    left: 28px;
+    padding-top: 4px;
+  }
+
+  .form-group:nth-of-type(3)::before {
+    content: "\f0e0"
+  }
+
+  .form-group:nth-of-type(4)::before {
+    content: "\f095"
+  }
+
+  .form-group:nth-of-type(5)::before {
+    content: "\f1ad"
+  }
+  
+  .form-group:last-of-type::before {
+    content: "\f084"
+  }
+  button {
+    width: 40%;
+    margin: 5px 0 25px;
+  }
+  
+  .btn {
+    background-color: #722772;
+    color: white;
+    font-size: 19px;
+    padding: 7px 14px;
+    border-radius: 5px;
+    border-bottom: 4px solid rgb(77, 21, 70);
+  }
+  
+  .btn:hover, .btn:focus {
+    background-color: #b159b1;
+    border-bottom: 4px solid #722772;
+  }
+  
+  .svg-inline--fa {
+    font-size: 20px;
+    margin-right: 7px;
+  }
+  
+  .forgot-password {
+    padding: 5px 0 25px;
+  }
+  
+  .forgot-password a {
+    color: #ED2763;
+  }
+  
+  #admin-logo {
+    padding-right: 4px;
+  }
+  
+  #reg-heading {
+    background-color: #722772;
+    opacity: .75;
+    margin: 10pt 0 10pt 0;
+    padding: 10pt;
+    text-align: center;
+    color: white;
+  }
+
+  #booking-heading {
+    background-color: #515F66;
+    opacity: .75;
+    margin: 10pt 0 10pt 0;
+    padding: 10pt;
+    text-align: center;
+    color: white;
+  }

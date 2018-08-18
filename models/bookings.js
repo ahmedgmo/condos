@@ -1,14 +1,31 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     let Bookings = sequelize.define("Bookings", {
+        date: DataTypes.DATEONLY,
         guests: DataTypes.INTEGER,
-        start_at: DataTypes.DATE,
-        end_at: DataTypes.DATE,
+        startAt: DataTypes.DATE,
+        endAt: DataTypes.DATE,
         duration: DataTypes.INTEGER,
         alcohol: DataTypes.BOOLEAN,
-        sec_guard: DataTypes.BOOLEAN,
+        secGuard: DataTypes.BOOLEAN,
         costs: DataTypes.INTEGER,
-        price_paid: DataTypes.BOOLEAN,
-        can_use: DataTypes.BOOLEAN
+        pricePaid: DataTypes.BOOLEAN,
+        canUse: DataTypes.BOOLEAN
     });
+
+    Bookings.associate = function(models) {
+        Bookings.belongsTo(models.Users, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+
+        Bookings.belongsTo(models.Rooms, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+    }
+    
     return Bookings;
-  }; 
+};
+
