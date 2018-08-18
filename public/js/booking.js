@@ -1,5 +1,5 @@
 // When user clicks add-btn
-$("#add-btn").on("click", function(event) {
+$("#submit").on("click", function(event) {
   event.preventDefault();
 
   var partyDuration = $("#startTime").val() - $("#endTime").val();
