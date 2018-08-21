@@ -1,23 +1,13 @@
-var User = require("../../models/users");
-var bcrypt = require("bcrypt");
+$("#newUser").on("click", function(event) {
+  event.preventDefault();
+  var data = $("#registerForm")
+    .serializeArray()
+    .reduce(function(obj, item) {
+      obj[item.name] = item.value;
+      return obj;
+    }, {});
 
-$("#submit").on("click", function (event) {
-    event.preventDefault();
-    app.post("/user", function (req, res, next) {
-        bcrypt.hash(req.body.password, 10, function (err, hash) {
-            if (err) {
-                return res.status(500).json
-            } else {
-                let user = new User({
-                    firstName: req.body.firstName,
-                    lastName: req.body.lastName,
-                    email: req.body.email,
-                    cellphone: req.body.cellNum,
-                    unitNum: req.body.unitNum,
-                    password: hash
-                });
-                user.create()
-            }
-        });
-    });
+  console.log(data);
+
+  $.post("/api/users", data).then(window.location.replace("/dashboard"));
 });

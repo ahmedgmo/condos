@@ -12,7 +12,6 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="styles/register.style.css">
-    <script src="js/register.js"></script>
     <title>Westlake Encore</title>
 </head>
 
@@ -24,7 +23,7 @@
         <div id="reg-heading">
             <h2>Registration Form</h2>
         </div>
-        <form class="col-12" action="">
+        <form id="registerForm" class="col-12" action="">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="First Name" id="firstName" name="firstName" required>
             </div>
@@ -38,7 +37,7 @@
                 <input type="tel" class="form-control" placeholder="555-123-4567" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="cellNum" name="cellNum" required>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Unit Number (i.e. 4703 or PH20 or LPH21)" id="unitNum" name="unitNum" required>
+                <input type="text" class="form-control" placeholder="Units Number (i.e. 4703 or PH20 or LPH21)" id="unitNum" name="unitNum" required>
             </div>
             <div class="form-group">
                 <input type="password" class="form-control" placeholder="password" id="password" name="password" required>
@@ -52,14 +51,15 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
         crossorigin="anonymous"></script>
+    <script src="js/register.js"></script>
 </body>
 
 </html>
