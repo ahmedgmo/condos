@@ -15,13 +15,13 @@ module.exports = function (sequelize, DataTypes) {
     Bookings.associate = function(models) {
         Bookings.belongsTo(models.Users, {
             foreignKey: {
-                allowNull: false
+                // allowNull: false
             }
         });
 
         Bookings.belongsTo(models.Rooms, {
             foreignKey: {
-                allowNull: false
+                // allowNull: false
             }
         });
     }
